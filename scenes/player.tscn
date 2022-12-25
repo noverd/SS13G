@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://djms6pyd0kjla"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_fjodr"]
+[ext_resource type="Texture2D" uid="uid://da0emnkq2udft" path="res://res/human/full.png" id="4_alckf"]
+[ext_resource type="Texture2D" uid="uid://cf32acf26xg5a" path="res://res/light/light.png" id="6_633xh"]
+[ext_resource type="PackedScene" uid="uid://c1k5fmscccv18" path="res://scenes/ui/PlayerUI.tscn" id="7_ulsps"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7i710"]
+size = Vector2(34, 33)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_fjodr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 15.5)
+shape = SubResource("RectangleShape2D_7i710")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2(2, 2)
+
+[node name="FlashLight" type="PointLight2D" parent="."]
+shadow_enabled = true
+texture = ExtResource("6_633xh")
+
+[node name="FlashLight2" type="PointLight2D" parent="."]
+light_mask = 2
+position = Vector2(45, 10)
+energy = 0.5
+range_item_cull_mask = 3
+shadow_item_cull_mask = 2
+texture = ExtResource("6_633xh")
+texture_scale = 0.5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerUI" parent="CanvasLayer" instance=ExtResource("7_ulsps")]
+offset_left = 10.0
+offset_top = -9.0
+offset_right = 10.0
+offset_bottom = -9.0
+
+[node name="Full" type="Sprite2D" parent="."]
+texture = ExtResource("4_alckf")

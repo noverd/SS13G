@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://da0kc4lsgt2iv"]
+
+[node name="dark-tile" type="Sprite2D"]

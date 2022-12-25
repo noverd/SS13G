@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://c1k5fmscccv18"]
+
+[ext_resource type="PackedScene" uid="uid://8x7e8ocbhaio" path="res://scenes/ui/SlotButton.tscn" id="1_lb0df"]
+[ext_resource type="Texture2D" uid="uid://c26w2cfacl0eg" path="res://res/ui/slots/belt.png" id="2_x3vdp"]
+[ext_resource type="Texture2D" uid="uid://dbxguhriegm0l" path="res://res/ui/slots/hand_l.png" id="4_1umni"]
+[ext_resource type="Texture2D" uid="uid://b0s00qkc7buhw" path="res://res/clothes/back/icon.png" id="4_6f6u1"]
+[ext_resource type="Texture2D" uid="uid://c4adw1tw8gwu2" path="res://res/ui/slots/hand_r.png" id="4_jqt36"]
+[ext_resource type="Texture2D" uid="uid://du6r7k4ngdwxm" path="res://res/ui/slots/shoes.png" id="5_cppln"]
+[ext_resource type="Texture2D" uid="uid://ynouieahiodh" path="res://res/ui/slots/uniform.png" id="6_fjaow"]
+[ext_resource type="Texture2D" uid="uid://cmtu0v5vb56n8" path="res://res/ui/slots/head.png" id="7_if2tt"]
+
+[node name="PlayerUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "UI panel for player"
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26
+anchor_top = 0.87
+anchor_right = 0.74
+anchor_bottom = 1.0
+offset_left = 0.799957
+offset_top = 0.399902
+offset_right = -0.800049
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Belt" parent="HBox" instance=ExtResource("1_lb0df")]
+layout_mode = 2
+texture_normal = ExtResource("2_x3vdp")
+
+[node name="Back" parent="HBox" instance=ExtResource("1_lb0df")]
+layout_mode = 2
+Icon = ExtResource("4_6f6u1")
+
+[node name="L_Hand" parent="HBox" instance=ExtResource("1_lb0df")]
+layout_mode = 2
+texture_normal = ExtResource("4_1umni")
+
+[node name="R_Hand" parent="HBox" instance=ExtResource("1_lb0df")]
+layout_mode = 2
+texture_normal = ExtResource("4_jqt36")
+
+[node name="Shoes" parent="HBox" instance=ExtResource("1_lb0df")]
+layout_mode = 2
+texture_normal = ExtResource("5_cppln")
+
+[node name="Uniform" parent="HBox" instance=ExtResource("1_lb0df")]
+layout_mode = 2
+texture_normal = ExtResource("6_fjaow")
+
+[node name="Head" parent="HBox" instance=ExtResource("1_lb0df")]
+layout_mode = 2
+texture_normal = ExtResource("7_if2tt")
