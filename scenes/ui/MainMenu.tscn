@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://buft0645hrhk4"]
+
+[ext_resource type="Script" path="res://scripts/ui/MainMenu.gd" id="1_lonyt"]
+[ext_resource type="FontVariation" uid="uid://djeoody7vfhy5" path="res://res/fnt/MainMenuFont.tres" id="1_mqebg"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lonyt")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.25
+theme_override_constants/separation = 50
+
+[node name="GameName" type="Label" parent="HBox/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mqebg")
+theme_override_font_sizes/font_size = 128
+text = "KEY_GAMENAME"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="HBox/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mqebg")
+theme_override_font_sizes/font_size = 128
+text = "KEY_PLAY"
+
+[node name="Multiplayer" type="Button" parent="HBox/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mqebg")
+theme_override_font_sizes/font_size = 128
+disabled = true
+text = "KEY_MULTIPLAYER"
+
+[node name="Settings" type="Button" parent="HBox/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mqebg")
+theme_override_font_sizes/font_size = 128
+text = "KEY_SETTINGS"
+
+[node name="Account" type="Button" parent="HBox/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mqebg")
+theme_override_font_sizes/font_size = 128
+disabled = true
+text = "KEY_ACCOUNT"
+
+[node name="Exit" type="Button" parent="HBox/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mqebg")
+theme_override_font_sizes/font_size = 128
+text = "KEY_QUIT"
+
+[connection signal="pressed" from="HBox/VBox/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="HBox/VBox/Settings" to="." method="on_Settings_pressed"]
+[connection signal="pressed" from="HBox/VBox/Exit" to="." method="on_Exit_pressed"]
