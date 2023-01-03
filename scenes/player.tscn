@@ -1,35 +1,40 @@
-[gd_scene load_steps=7 format=3 uid="uid://djms6pyd0kjla"]
+[gd_scene load_steps=15 format=3 uid="uid://djms6pyd0kjla"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fjodr"]
-[ext_resource type="Texture2D" uid="uid://da0emnkq2udft" path="res://res/human/full.png" id="4_alckf"]
+[ext_resource type="Texture2D" uid="uid://cadcnv2pgkkas" path="res://res/human/head_f.png" id="4_32ufn"]
+[ext_resource type="Texture2D" uid="uid://bom4sxwdip6cc" path="res://res/human/l_arm.png" id="5_og2vs"]
 [ext_resource type="Texture2D" uid="uid://cf32acf26xg5a" path="res://res/light/light.png" id="6_633xh"]
-[ext_resource type="PackedScene" uid="uid://c1k5fmscccv18" path="res://scenes/ui/PlayerUI.tscn" id="7_ulsps"]
+[ext_resource type="Texture2D" uid="uid://dtjgckiix8g4s" path="res://res/human/l_foot.png" id="6_gpnop"]
+[ext_resource type="Texture2D" uid="uid://dkdlw330jhtnh" path="res://res/human/l_hand.png" id="7_006ut"]
+[ext_resource type="PackedScene" uid="uid://c4f4evc6j43t6" path="res://scenes/ui/PlayerUI.tscn" id="7_ulsps"]
+[ext_resource type="Texture2D" uid="uid://coxjallji53k5" path="res://res/human/l_leg.png" id="8_i0cf4"]
+[ext_resource type="Texture2D" uid="uid://dcd51l86topv7" path="res://res/human/r_arm.png" id="9_055c2"]
+[ext_resource type="Texture2D" uid="uid://be5a4eb7j48hs" path="res://res/human/r_foot.png" id="10_s6vrt"]
+[ext_resource type="Texture2D" uid="uid://fywqtkx05kt6" path="res://res/human/r_hand.png" id="11_sfsdt"]
+[ext_resource type="Texture2D" uid="uid://dywanen12cdi3" path="res://res/human/r_leg.png" id="12_yy4jk"]
+[ext_resource type="Texture2D" uid="uid://b7mq0winqq3io" path="res://res/human/torso_f.png" id="13_a53m2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yag2"]
-size = Vector2(34, 33)
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_n1ac8"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/sync = true
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_beca6"]
+size = Vector2(34, 58)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_fjodr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 15.5)
-shape = SubResource("RectangleShape2D_0yag2")
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_beca6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
 [node name="FlashLight" type="PointLight2D" parent="."]
+energy = 0.5
+blend_mode = 2
 shadow_enabled = true
 texture = ExtResource("6_633xh")
 
 [node name="FlashLight2" type="PointLight2D" parent="."]
 light_mask = 2
-position = Vector2(45, 10)
 energy = 0.5
 range_item_cull_mask = 3
 shadow_item_cull_mask = 2
@@ -44,9 +49,64 @@ offset_top = -9.0
 offset_right = 10.0
 offset_bottom = -9.0
 
-[node name="Full" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("4_alckf")
+[node name="Textures" type="Node2D" parent="."]
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_n1ac8")
+[node name="Head" type="Sprite2D" parent="Textures"]
+scale = Vector2(2, 2)
+texture = ExtResource("4_32ufn")
+hframes = 2
+vframes = 2
+
+[node name="LArm" type="Sprite2D" parent="Textures"]
+scale = Vector2(2, 2)
+texture = ExtResource("5_og2vs")
+hframes = 2
+vframes = 2
+
+[node name="LFoot" type="Sprite2D" parent="Textures"]
+scale = Vector2(2, 2)
+texture = ExtResource("6_gpnop")
+hframes = 2
+vframes = 2
+
+[node name="LHand" type="Sprite2D" parent="Textures"]
+scale = Vector2(2, 2)
+texture = ExtResource("7_006ut")
+hframes = 2
+vframes = 2
+
+[node name="LLeg" type="Sprite2D" parent="Textures"]
+scale = Vector2(2, 2)
+texture = ExtResource("8_i0cf4")
+hframes = 2
+vframes = 2
+
+[node name="RArm" type="Sprite2D" parent="Textures"]
+scale = Vector2(2, 2)
+texture = ExtResource("9_055c2")
+hframes = 2
+vframes = 2
+
+[node name="RFoot" type="Sprite2D" parent="Textures"]
+scale = Vector2(2, 2)
+texture = ExtResource("10_s6vrt")
+hframes = 2
+vframes = 2
+
+[node name="RHand" type="Sprite2D" parent="Textures"]
+scale = Vector2(2, 2)
+texture = ExtResource("11_sfsdt")
+hframes = 2
+vframes = 2
+
+[node name="RLeg" type="Sprite2D" parent="Textures"]
+scale = Vector2(2, 2)
+texture = ExtResource("12_yy4jk")
+hframes = 2
+vframes = 2
+
+[node name="Torso" type="Sprite2D" parent="Textures"]
+scale = Vector2(2, 2)
+texture = ExtResource("13_a53m2")
+hframes = 2
+vframes = 2

@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1k5fmscccv18"]
+[gd_scene load_steps=9 format=3 uid="uid://c4f4evc6j43t6"]
 
 [ext_resource type="PackedScene" uid="uid://8x7e8ocbhaio" path="res://scenes/ui/SlotButton.tscn" id="1_lb0df"]
 [ext_resource type="Texture2D" uid="uid://c26w2cfacl0eg" path="res://res/ui/slots/belt.png" id="2_x3vdp"]
+[ext_resource type="Texture2D" uid="uid://b0s00qkc7buhw" path="res://res/items/icon.png" id="3_ghong"]
 [ext_resource type="Texture2D" uid="uid://dbxguhriegm0l" path="res://res/ui/slots/hand_l.png" id="4_1umni"]
-[ext_resource type="Texture2D" uid="uid://b0s00qkc7buhw" path="res://res/clothes/back/icon.png" id="4_6f6u1"]
 [ext_resource type="Texture2D" uid="uid://c4adw1tw8gwu2" path="res://res/ui/slots/hand_r.png" id="4_jqt36"]
 [ext_resource type="Texture2D" uid="uid://du6r7k4ngdwxm" path="res://res/ui/slots/shoes.png" id="5_cppln"]
 [ext_resource type="Texture2D" uid="uid://ynouieahiodh" path="res://res/ui/slots/uniform.png" id="6_fjaow"]
@@ -46,7 +46,7 @@ offset_left = 132.0
 offset_right = 260.0
 offset_bottom = 140.0
 scale = Vector2(1, 1)
-Icon = ExtResource("4_6f6u1")
+Icon = ExtResource("3_ghong")
 
 [node name="L_Hand" parent="HBox" instance=ExtResource("1_lb0df")]
 anchor_right = 0.0
