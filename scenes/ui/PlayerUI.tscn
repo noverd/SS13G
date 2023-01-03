@@ -19,7 +19,6 @@ grow_vertical = 2
 tooltip_text = "UI panel for player"
 
 [node name="HBox" type="HBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.26
 anchor_top = 0.87
@@ -33,29 +32,63 @@ grow_vertical = 0
 alignment = 1
 
 [node name="Belt" parent="HBox" instance=ExtResource("1_lb0df")]
-layout_mode = 2
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 128.0
+offset_bottom = 140.0
+scale = Vector2(1, 1)
 texture_normal = ExtResource("2_x3vdp")
 
 [node name="Back" parent="HBox" instance=ExtResource("1_lb0df")]
-layout_mode = 2
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 132.0
+offset_right = 260.0
+offset_bottom = 140.0
+scale = Vector2(1, 1)
 Icon = ExtResource("4_6f6u1")
 
 [node name="L_Hand" parent="HBox" instance=ExtResource("1_lb0df")]
-layout_mode = 2
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 264.0
+offset_right = 392.0
+offset_bottom = 140.0
+scale = Vector2(1, 1)
 texture_normal = ExtResource("4_1umni")
 
 [node name="R_Hand" parent="HBox" instance=ExtResource("1_lb0df")]
-layout_mode = 2
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 396.0
+offset_right = 524.0
+offset_bottom = 140.0
+scale = Vector2(1, 1)
 texture_normal = ExtResource("4_jqt36")
 
 [node name="Shoes" parent="HBox" instance=ExtResource("1_lb0df")]
-layout_mode = 2
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 528.0
+offset_right = 656.0
+offset_bottom = 140.0
+scale = Vector2(1, 1)
 texture_normal = ExtResource("5_cppln")
 
 [node name="Uniform" parent="HBox" instance=ExtResource("1_lb0df")]
-layout_mode = 2
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 660.0
+offset_right = 788.0
+offset_bottom = 140.0
+scale = Vector2(1, 1)
 texture_normal = ExtResource("6_fjaow")
 
 [node name="Head" parent="HBox" instance=ExtResource("1_lb0df")]
-layout_mode = 2
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 792.0
+offset_right = 920.0
+offset_bottom = 140.0
+scale = Vector2(1, 1)
 texture_normal = ExtResource("7_if2tt")

@@ -16,7 +16,6 @@ stretch_mode = 4
 script = ExtResource("2_l88hf")
 
 [node name="Icon" type="TextureRect" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.031
 anchor_top = 0.031

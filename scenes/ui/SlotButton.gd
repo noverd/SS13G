@@ -8,7 +8,6 @@ func _ready():
 		
 func _physics_process(delta):
 	if Icon != null:
-		print(Icon)
 		$Icon.texture = Icon
 		texture_normal = load("res://res/ui/slots/block.png")
 	else:
