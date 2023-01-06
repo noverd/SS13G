@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk4obttoun1ny"
-path="res://.godot/imported/army_boots.png-00a09957e24ffb18d4c34f287215f1e6.ctex"
+uid="uid://difsqbmhu7xvh"
+path="res://.godot/imported/inhand-left.png-9b38a532a7a4afbc633676a69235c2ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/clothes/boots/army_boots.png"
-dest_files=["res://.godot/imported/army_boots.png-00a09957e24ffb18d4c34f287215f1e6.ctex"]
+source_file="res://res/clothes/belt/utility/inhand-left.png"
+dest_files=["res://.godot/imported/inhand-left.png-9b38a532a7a4afbc633676a69235c2ec.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0s00qkc7buhw"
-path="res://.godot/imported/icon.png-59d1b681bdbdd6f5b3637e78b02b0bcf.ctex"
+uid="uid://cfbfoyhd3wm3j"
+path="res://.godot/imported/equipped.png-c89f768c6bcfc3e0baf6a4e8a3ff1df9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/items/icon.png"
-dest_files=["res://.godot/imported/icon.png-59d1b681bdbdd6f5b3637e78b02b0bcf.ctex"]
+source_file="res://res/clothes/uniform/ancient/equipped.png"
+dest_files=["res://.godot/imported/equipped.png-c89f768c6bcfc3e0baf6a4e8a3ff1df9.ctex"]
 
 [params]
 

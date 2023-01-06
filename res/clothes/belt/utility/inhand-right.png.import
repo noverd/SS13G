@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://skspgncumwtv"
-path="res://.godot/imported/t-shirt.png-eb26e32342980d5cb676b6dd6b1531c0.ctex"
+uid="uid://ccoma2ie8w77m"
+path="res://.godot/imported/inhand-right.png-c48d08f8d1ea2ad5c9149db9de2c32ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/clothes/torso/t-shirt.png"
-dest_files=["res://.godot/imported/t-shirt.png-eb26e32342980d5cb676b6dd6b1531c0.ctex"]
+source_file="res://res/clothes/belt/utility/inhand-right.png"
+dest_files=["res://.godot/imported/inhand-right.png-c48d08f8d1ea2ad5c9149db9de2c32ea.ctex"]
 
 [params]
 

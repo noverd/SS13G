@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgd2ol1h6todd"
-path="res://.godot/imported/army_pants.png-501238d3a79f59fbf0f19bca3f7b5009.ctex"
+uid="uid://fiq8yeee8wuo"
+path="res://.godot/imported/icon.png-d160afcd978ce2dc31c8e0170d162bf2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/clothes/legs/army_pants.png"
-dest_files=["res://.godot/imported/army_pants.png-501238d3a79f59fbf0f19bca3f7b5009.ctex"]
+source_file="res://res/clothes/uniform/ancient/icon.png"
+dest_files=["res://.godot/imported/icon.png-d160afcd978ce2dc31c8e0170d162bf2.ctex"]
 
 [params]
 

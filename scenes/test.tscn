@@ -57,3 +57,8 @@ color = Color(0.0156863, 0.0156863, 0.0156863, 1)
 [node name="players" type="Node2D" parent="."]
 
 [node name="objects" type="Node2D" parent="."]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/player.tscn")
+spawn_path = NodePath("../players")
+spawn_limit = 10
