@@ -41,5 +41,3 @@ func remove_player(peer_id):
 	print("destroy player: peer_id: %d" % peer_id)
 	connected_peers.erase(peer_id)
 	$players.get_node(str(peer_id)).queue_free()
-	
-

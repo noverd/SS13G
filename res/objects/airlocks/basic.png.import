@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cye6l8oxvbbw6"
-path="res://.godot/imported/open-4.png-ea52f27bb4681075487240405cc1caf9.ctex"
+uid="uid://tgltuiygj308"
+path="res://.godot/imported/basic.png-bcea8bff8709659ce3c199f8cc1ddd7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/objects/airlock/open-4.png"
-dest_files=["res://.godot/imported/open-4.png-ea52f27bb4681075487240405cc1caf9.ctex"]
+source_file="res://res/objects/airlocks/basic.png"
+dest_files=["res://.godot/imported/basic.png-bcea8bff8709659ce3c199f8cc1ddd7b.ctex"]
 
 [params]
 

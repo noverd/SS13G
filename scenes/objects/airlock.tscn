@@ -1,28 +1,70 @@
-[gd_scene load_steps=13 format=3 uid="uid://sl13icpb8pu1"]
+[gd_scene load_steps=19 format=3 uid="uid://sl13icpb8pu1"]
 
 [ext_resource type="Script" path="res://scripts/airlock.gd" id="1_a8k1g"]
-[ext_resource type="Texture2D" uid="uid://w8rqwcscaa35" path="res://res/objects/airlock/close.png" id="1_xrfoe"]
-[ext_resource type="Texture2D" uid="uid://ca4ua2sjxqf0s" path="res://res/objects/airlock/open-1.png" id="2_2gohq"]
-[ext_resource type="Texture2D" uid="uid://b5j7wmee3o1ge" path="res://res/objects/airlock/open-2.png" id="3_17tu5"]
-[ext_resource type="Texture2D" uid="uid://d1ko6j4samuga" path="res://res/objects/airlock/open-3.png" id="4_aabkv"]
-[ext_resource type="Texture2D" uid="uid://cye6l8oxvbbw6" path="res://res/objects/airlock/open-4.png" id="5_pg5rk"]
-[ext_resource type="Texture2D" uid="uid://4krea3lhlk7s" path="res://res/objects/airlock/open-5.png" id="6_gjc54"]
-[ext_resource type="Texture2D" uid="uid://cxqd68t0i876b" path="res://res/objects/airlock/opened.png" id="7_sarw4"]
+[ext_resource type="Texture2D" uid="uid://tgltuiygj308" path="res://res/objects/airlocks/basic.png" id="2_d4mhu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37fj5"]
 size = Vector2(63, 63)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gxjl"]
+atlas = ExtResource("2_d4mhu")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt5in"]
+atlas = ExtResource("2_d4mhu")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvgeg"]
+atlas = ExtResource("2_d4mhu")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx04x"]
+atlas = ExtResource("2_d4mhu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hrfx"]
+atlas = ExtResource("2_d4mhu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wkiu"]
+atlas = ExtResource("2_d4mhu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fshfn"]
+atlas = ExtResource("2_d4mhu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1arm"]
+atlas = ExtResource("2_d4mhu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0xlf"]
+atlas = ExtResource("2_d4mhu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqew3"]
+atlas = ExtResource("2_d4mhu")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i685o"]
+atlas = ExtResource("2_d4mhu")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db3aj"]
+atlas = ExtResource("2_d4mhu")
+region = Rect2(64, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_xyx4k"]
 animations = [{
-"frames": [ExtResource("7_sarw4"), ExtResource("6_gjc54"), ExtResource("5_pg5rk"), ExtResource("4_aabkv"), ExtResource("3_17tu5"), ExtResource("2_2gohq"), ExtResource("1_xrfoe")],
+"frames": [SubResource("AtlasTexture_1gxjl"), SubResource("AtlasTexture_yt5in"), SubResource("AtlasTexture_lvgeg"), SubResource("AtlasTexture_vx04x"), SubResource("AtlasTexture_5hrfx"), SubResource("AtlasTexture_5wkiu")],
 "loop": false,
 "name": &"closing",
-"speed": 9.0
+"speed": 8.0
 }, {
-"frames": [ExtResource("1_xrfoe"), ExtResource("2_2gohq"), ExtResource("3_17tu5"), ExtResource("4_aabkv"), ExtResource("5_pg5rk"), ExtResource("6_gjc54"), ExtResource("7_sarw4")],
+"frames": [SubResource("AtlasTexture_fshfn"), SubResource("AtlasTexture_o1arm"), SubResource("AtlasTexture_f0xlf"), SubResource("AtlasTexture_bqew3"), SubResource("AtlasTexture_i685o"), SubResource("AtlasTexture_db3aj")],
 "loop": false,
 "name": &"openning",
-"speed": 9.0
+"speed": 8.0
 }]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ntew8"]
@@ -40,10 +82,12 @@ position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_37fj5")
 
 [node name="Texture" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 frames = SubResource("SpriteFrames_xyx4k")
 animation = &"openning"
 
 [node name="Shadow" type="LightOccluder2D" parent="Texture"]
+scale = Vector2(0.5, 0.5)
 occluder = SubResource("OccluderPolygon2D_ntew8")
 
 [node name="Area2D" type="Area2D" parent="."]
