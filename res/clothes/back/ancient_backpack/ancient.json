@@ -1,0 +1,12 @@
+{
+	"name": "Ancient_Backpack",
+	"id": "ancient_backpack",
+	"type": "back-clothing",
+	"icon": "icon.svg",
+	"params": {
+		"tar": {
+			"size": 100,
+		
+		}
+	}
+}

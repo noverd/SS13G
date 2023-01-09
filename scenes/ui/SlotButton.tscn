@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ebxhkjv00ksm"]
+[gd_scene load_steps=3 format=3 uid="uid://upfv82wo8yab"]
 
 [ext_resource type="Texture2D" uid="uid://cl55jusffhgpq" path="res://res/ui/slots/back.png" id="1_rvd3b"]
-[ext_resource type="Script" path="res://scripts/SlotButton.gd" id="2_i2yh1"]
+[ext_resource type="Script" path="res://scripts/ui/SlotButton.gd" id="2_xnjs5"]
 
 [node name="SlotButton" type="TextureButton"]
 anchors_preset = -1
@@ -13,7 +13,7 @@ scale = Vector2(4, 4)
 size_flags_horizontal = 3
 texture_normal = ExtResource("1_rvd3b")
 stretch_mode = 4
-script = ExtResource("2_i2yh1")
+script = ExtResource("2_xnjs5")
 
 [node name="Icon" type="TextureRect" parent="."]
 anchors_preset = -1
