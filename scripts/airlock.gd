@@ -18,18 +18,13 @@ func _physics_process(delta):
 					playing = true
 					is_open = false
 
-
 func _on_body_entred(body):
 	if body.get("can_open_doors"): 
 		near = true
-		
-
 
 func _on_body_exited(body):
 	if body.get("can_open_doors"):
 		near = false
-	
-
 
 func _on_played():
 	playing = false

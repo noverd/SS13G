@@ -17,19 +17,19 @@ func _ready():
 	
 		
 func server():
-	print("Running server: ip: %s , port: %d" % [address, port])
+	Log.l("Running server: ip: %s , port: %d" % [address, port])
 	peer.create_server(port)
 	multiplayer.set_multiplayer_peer(peer)
 	peer.peer_connected.connect(add_player)
 	peer.peer_disconnected.connect(remove_player)
 	
 func client():
-	print("Running client: ip: %s , port: %d" % [address, port])
+	Log.l("Running client: ip: %s , port: %d" % [address, port])
 	peer.create_client(address, port)
 	multiplayer.set_multiplayer_peer(peer)
 
 func add_player(peer_id):
-	print("add player: peer_id: %d" % peer_id)
+	Log.l("add player: peer_id: %d" % peer_id)
 	connected_peers.append(peer_id)
 	var player_character = preload("res://scenes/player.tscn").instantiate()
 	player_character.set_multiplayer_authority(peer_id)
@@ -38,6 +38,6 @@ func add_player(peer_id):
 
 @rpc
 func remove_player(peer_id):
-	print("destroy player: peer_id: %d" % peer_id)
+	Log.l("destroy player: peer_id: %d" % peer_id)
 	connected_peers.erase(peer_id)
 	$players.get_node(str(peer_id)).queue_free()
