@@ -27,6 +27,13 @@ func client():
 	Log.l("Running client: ip: %s , port: %d" % [address, port])
 	peer.create_client(address, port)
 	multiplayer.set_multiplayer_peer(peer)
+	multiplayer.connection_failed.connect(
+		func(): Log.err("Client: failed connect to server")
+		)
+	multiplayer.server_disconnected.connect(server_disconnected)
+
+func server_disconnected(): # Prototype
+	pass
 
 func add_player(peer_id):
 	Log.l("add player: peer_id: %d" % peer_id)

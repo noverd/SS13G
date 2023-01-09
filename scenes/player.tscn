@@ -19,10 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://dsudx3f5qinca" path="res://res/clothes/head/bluecap/equipped.png" id="17_sc827"]
 [ext_resource type="Texture2D" uid="uid://blhgtkdu5uchb" path="res://res/clothes/belt/utility/equipped.png" id="18_gsgjy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_38emy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nnpi"]
 size = Vector2(34, 58)
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_k3heo"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_b0tue"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/sync = true
@@ -50,7 +50,7 @@ script = ExtResource("1_fjodr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 3)
-shape = SubResource("RectangleShape2D_38emy")
+shape = SubResource("RectangleShape2D_8nnpi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -167,4 +167,4 @@ vframes = 2
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_interval = 0.01
-replication_config = SubResource("SceneReplicationConfig_k3heo")
+replication_config = SubResource("SceneReplicationConfig_b0tue")
