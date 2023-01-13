@@ -1,7 +1,8 @@
 extends Node
 var items_list: Array = []
 
-func load_item_from_json(filename: String):
+## Registring item from .json file
+func register_item_from_file(filename: String):
 	var file = FileAccess.open(filename, FileAccess.READ)
 	if file == null:
 		Log.err("ItemManager LoadingJSON Error: Can't access .json file at path %s . File is empty" % filename)
@@ -21,16 +22,14 @@ func load_item_from_json(filename: String):
 
 func _ready():
 	for file in get_all_files("res://"):
-		load_item_from_json(file)
+		register_item_from_file(file)
 
 func get_all_files(path: String, file_ext = "json", files = []):
 	var dir = DirAccess.open(path)
 
 	if dir:
 		dir.list_dir_begin()
-
 		var file_name = dir.get_next()
-
 		while file_name != "":
 			if dir.current_is_dir():
 				files = get_all_files(dir.get_current_dir().path_join(file_name), file_ext, files)

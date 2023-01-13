@@ -1,0 +1,13 @@
+{
+	"name": "WorkBoots", 
+	"id": "work_booots", 
+	"type": "boots-clothing", 
+	"icon": "icon.png", 
+	"params": {
+    	"texture":{
+            "inhand_left": "inhand-left.png", 
+            "inhand_right": "inhand-right.png", 
+            "equipped": "equipped.png"
+        }
+	}
+}

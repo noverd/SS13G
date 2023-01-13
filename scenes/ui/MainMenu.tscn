@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://buft0645hrhk4"]
+[gd_scene load_steps=3 format=3 uid="uid://bhaljal7r7elm"]
 
 [ext_resource type="Script" path="res://scripts/ui/MainMenu.gd" id="1_lonyt"]
 [ext_resource type="FontVariation" uid="uid://djeoody7vfhy5" path="res://res/fnt/MainMenuFont.tres" id="1_mqebg"]
@@ -13,69 +13,56 @@ grow_vertical = 2
 script = ExtResource("1_lonyt")
 
 [node name="Panel" type="Panel" parent="."]
-anchors_preset = -1
+layout_mode = 0
 anchor_right = 0.5
 anchor_bottom = 1.0
 
 [node name="HBox" type="HBoxContainer" parent="."]
-anchors_preset = -1
+layout_mode = 0
 anchor_right = 0.5
 anchor_bottom = 1.0
 alignment = 1
 
 [node name="VBox" type="VBoxContainer" parent="HBox"]
-offset_left = 180.0
-offset_right = 780.0
-offset_bottom = 1080.0
+layout_mode = 2
 size_flags_stretch_ratio = 0.25
 theme_override_constants/separation = 50
 
 [node name="GameName" type="Label" parent="HBox/VBox"]
-offset_right = 600.0
-offset_bottom = 113.0
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_mqebg")
 theme_override_font_sizes/font_size = 128
 text = "KEY_GAMENAME"
 horizontal_alignment = 1
 
 [node name="Play" type="Button" parent="HBox/VBox"]
-offset_top = 163.0
-offset_right = 600.0
-offset_bottom = 281.0
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_mqebg")
 theme_override_font_sizes/font_size = 128
 text = "KEY_PLAY"
 
 [node name="Multiplayer" type="Button" parent="HBox/VBox"]
-offset_top = 331.0
-offset_right = 600.0
-offset_bottom = 449.0
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_mqebg")
 theme_override_font_sizes/font_size = 128
 disabled = true
 text = "KEY_MULTIPLAYER"
 
 [node name="Settings" type="Button" parent="HBox/VBox"]
-offset_top = 499.0
-offset_right = 600.0
-offset_bottom = 617.0
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_mqebg")
 theme_override_font_sizes/font_size = 128
 text = "KEY_SETTINGS"
 
 [node name="Account" type="Button" parent="HBox/VBox"]
-offset_top = 667.0
-offset_right = 600.0
-offset_bottom = 785.0
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_mqebg")
 theme_override_font_sizes/font_size = 128
 disabled = true
 text = "KEY_ACCOUNT"
 
 [node name="Exit" type="Button" parent="HBox/VBox"]
-offset_top = 835.0
-offset_right = 600.0
-offset_bottom = 953.0
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_mqebg")
 theme_override_font_sizes/font_size = 128
 text = "KEY_QUIT"

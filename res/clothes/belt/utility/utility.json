@@ -1,0 +1,17 @@
+{
+	"name": "Utility_Belt", 
+	"id": "utility_belt", 
+	"type": "belt-clothing", 
+	"icon": "icon.png", 
+	"params": { 
+		"tar": {
+			"size": 60,
+			"accept_items": ["nippers", "screwdriver", "multitool", "welding_machine", "crowbar"]
+		},
+                "texture":{
+                	"inhand_left": "inhand-left.png", 
+                	"inhand_right": "inhand-right.png", 
+                	"equipped": "equipped.png"
+                }
+	}
+}
