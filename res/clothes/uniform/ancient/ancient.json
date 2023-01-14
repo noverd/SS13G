@@ -1,13 +1,13 @@
 {
 	"name": "AncientUniform", 
-	"id": "amcient_uniform", 
+	"id": "ancient_uniform", 
 	"type": "uniform-clothing", 
-	"icon": "icon.png", 
+	"icon": "./icon.png", 
 	"params": {
     	"texture":{
-            "inhand_left": "inhand-left.png", 
-            "inhand_right": "inhand-right.png", 
-            "equipped": "equipped.png"
+            "inhand_left": "./inhand-left.png", 
+            "inhand_right": "./inhand-right.png", 
+            "equipped": "./equipped.png"
         }
 	}
 }

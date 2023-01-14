@@ -7,11 +7,11 @@ enum {FEMALE, MALE}
 @export var gender: int = 0 # 0 - FEMALE, 1 - MALE
 enum {UP, DOWN, RIGHT, LEFT}
 
-@export var uniform = "ancient" # Cloth ID
+@export var uniform = "ancient_uniform" # Cloth ID
 @export var back = "ancient_backpack"
-@export var boots = "workboots"
-@export var head = "bluecap"
-@export var belt = "utility"
+@export var boots = "work_boots"
+@export var head = "blue_cap"
+@export var belt = "utility_belt"
 
 func is_local_authority():
 	return $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id()
