@@ -16,10 +16,15 @@ enum {UP, DOWN, RIGHT, LEFT}
 func is_local_authority():
 	return $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id()
 	
-func cloth(clothing_type: String, clothing: String):
-	var path =  "res://res/clothes/" + clothing_type + "/" + clothing + "/"
-	$CanvasLayer/PlayerUI/HBox.get_node(clothing_type.capitalize()).Icon = load(path + "icon.png")
-	$Textures.get_node(clothing_type.capitalize()).texture = load(path + "equipped.png")
+func cloth(clothing_type: String, item_id):
+	var item = ItemManager.get_item(item_id)
+	if item == null:
+		Log.err("Player Clothing: UnknowItemError: unknow item '%s'" % item_id)
+		$CanvasLayer/PlayerUI/HBox.get_node(clothing_type.capitalize()).Icon = null
+		$Textures.get_node(clothing_type.capitalize()).texture = null
+		return
+	$CanvasLayer/PlayerUI/HBox.get_node(clothing_type.capitalize()).Icon = item.item_icon
+	$Textures.get_node(clothing_type.capitalize()).texture = load(item.item_params["texture"].get("equipped"))
 	
 func _ready():
 	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())

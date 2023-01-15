@@ -23,9 +23,9 @@ func register_item_from_file(filename: String):
 	else:
 		Log.err("ItemManager LoadingJSON Error: Invalid json file %s" % filename)
 
-func get_item(name: String):
+func get_item(id: String):
 	for item in items_list:
-		if item.item_name == name:
+		if item.item_id == id:
 			return item
 	return null
 

@@ -1,0 +1,16 @@
+{
+	"name": "Duffel", 
+	"id": "duffel", 
+	"type": "back-clothing", 
+	"icon": "./icon.png", 
+	"params": { 
+		"tar": {
+			"size": 120
+		},
+                "texture":{
+                "inhand_left": "./inhand-left.png", 
+                "inhand_right": "./inhand-right.png", 
+                "equipped": "./equipped.png"
+                }
+	}
+}

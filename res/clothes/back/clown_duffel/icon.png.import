@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0aod10ihtu1w"
-path="res://.godot/imported/inhand-left.png-5e4f6bf7724ea5e587a89804f81da445.ctex"
+uid="uid://ilf6nx1yx2qu"
+path="res://.godot/imported/icon.png-f0470efb89905f54db2e5160906671a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/clothes/back/ancient_backpack/inhand-left.png"
-dest_files=["res://.godot/imported/inhand-left.png-5e4f6bf7724ea5e587a89804f81da445.ctex"]
+source_file="res://res/clothes/back/clown_duffel/icon.png"
+dest_files=["res://.godot/imported/icon.png-f0470efb89905f54db2e5160906671a9.ctex"]
 
 [params]
 

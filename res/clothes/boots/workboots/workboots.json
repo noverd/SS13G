@@ -1,6 +1,6 @@
 {
 	"name": "WorkBoots", 
-	"id": "work_booots", 
+	"id": "work_boots", 
 	"type": "boots-clothing", 
 	"icon": "./icon.png", 
 	"params": {
