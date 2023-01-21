@@ -62,4 +62,9 @@ func _physics_process(delta):
 		move_and_slide()
 	for tex in $Textures.get_children():
 		tex.frame = rotate
+	cloth("uniform", uniform)
+	cloth("back", back)
+	cloth("boots", boots)
+	cloth("head", head)
+	cloth("belt", belt)
 	

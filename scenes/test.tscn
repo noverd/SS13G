@@ -61,4 +61,22 @@ color = Color(0.0156863, 0.0156863, 0.0156863, 1)
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://scenes/player.tscn")
 spawn_path = NodePath("../players")
-spawn_limit = 10
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 2.0
+offset_top = 13.0
+offset_right = 347.0
+offset_bottom = 157.0
+text = "Spawn New"
+
+[node name="GAY" type="Button" parent="CanvasLayer"]
+offset_left = 1251.0
+offset_top = -1.0
+offset_right = 1909.0
+offset_bottom = 114.0
+text = "Spawn Orange"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/GAY" to="." method="_on_gay_pressed"]
