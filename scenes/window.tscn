@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://c16dusl7oqm2x"]
+
+[ext_resource type="FontVariation" uid="uid://djeoody7vfhy5" path="res://res/fnt/MainMenuFont.tres" id="1_mu8po"]
+[ext_resource type="Script" path="res://scripts/window.gd" id="2_ou4i2"]
+
+[node name="Window" type="Window"]
+title = "Scaner"
+position = Vector2i(1000, 125)
+size = Vector2i(600, 800)
+exclusive = true
+theme_override_fonts/title_font = ExtResource("1_mu8po")
+theme_override_font_sizes/title_font_size = 60
+script = ExtResource("2_ou4i2")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 2
+text = "FUCK YOU"
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
