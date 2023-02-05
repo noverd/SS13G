@@ -26,7 +26,7 @@ func cloth(clothing_type: String, item_id):
 	$CanvasLayer/PlayerUI/HBox.get_node(clothing_type.capitalize()).Icon = item.item_icon
 	$Textures.get_node(clothing_type.capitalize()).texture = load(item.item_params["texture"].get("equipped"))
 	
-func _ready():
+func _enter_tree():
 	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
 	controlled = is_local_authority()
 	$CanvasLayer/PlayerUI.visible = controlled

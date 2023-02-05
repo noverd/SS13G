@@ -1,5 +1,6 @@
 extends Node
 var items_list: Array = []
+var actions_list: Array = []
 
 ## Registring item from .json file
 func register_item_from_file(filename: String):
@@ -14,9 +15,12 @@ func register_item_from_file(filename: String):
 	
 	if parsed.has("name")  && parsed.has("id") && parsed.has("icon") && parsed.has("type") && parsed.has("params"):
 		parsed = replace_path(parsed, filename.get_base_dir() + "/")
+		var data = {}
+		if parsed.has("data"):
+			data = parsed["data"]
 		items_list.append(
 			Item.new(
-				parsed["id"], parsed["name"], parsed["icon"], parsed["type"], parsed["params"]
+				parsed["id"], parsed["name"], parsed["icon"], parsed["type"], parsed["params"], data
 				)
 			)
 		Log.l("ItemManager: Loaded .json file '%s' with item '%s'" % [filename, parsed["id"]])
@@ -75,6 +79,3 @@ func get_all_files(path: String, file_ext = "json", files = []):
 		Log.err("ItemManager GettingAllFiles Error: An error occurred when trying to access %s." % path)
 
 	return files
-
-
-
