@@ -1,4 +1,5 @@
 extends Node
+var action_adders_list: Array = []
 var items_list: Array = []
 var actions_list: Array = []
 
@@ -18,9 +19,17 @@ func register_item_from_file(filename: String):
 		var data = {}
 		if parsed.has("data"):
 			data = parsed["data"]
+		var actions = []
+		if parsed.has("actions"):
+			for act in parsed["actions"]:
+				var action = ItemManager.get_action(act)
+				if action != null:
+					actions.append(action)
+				else:
+					Log.err("ItemManager LoadingJSON Error: ActionsParsing Error: unknow action '%s'" % action)
 		items_list.append(
 			Item.new(
-				parsed["id"], parsed["name"], parsed["icon"], parsed["type"], parsed["params"], data
+				parsed["id"], parsed["name"], parsed["icon"], parsed["type"], parsed["params"], data, actions
 				)
 			)
 		Log.l("ItemManager: Loaded .json file '%s' with item '%s'" % [filename, parsed["id"]])
@@ -32,6 +41,12 @@ func get_item(id: String):
 		if item.item_id == id:
 			return item
 	return null
+
+func get_action(id: String):
+	for action in actions_list:
+		if action.get("id") == id:
+			return action
+		return null
 
 func replace_path(parsed, path):
 	if parsed is Array:
@@ -52,11 +67,6 @@ func replace_path(parsed, path):
 			if parsed.get(key) is Dictionary:
 				parsed[key] = replace_path(parsed[key], path)
 	return parsed
-			
-
-func _ready():
-	for file in get_all_files("res://"):
-		register_item_from_file(file)
 
 func get_all_files(path: String, file_ext = "json", files = []):
 	var dir = DirAccess.open(path)
@@ -77,5 +87,14 @@ func get_all_files(path: String, file_ext = "json", files = []):
 			file_name = dir.get_next()
 	else:
 		Log.err("ItemManager GettingAllFiles Error: An error occurred when trying to access %s." % path)
-
 	return files
+
+func _ready():
+	for file in get_all_files("res://scripts/action_adders/", "gd"):
+		action_adders_list.append(load(file))
+		Log.l("ItemManager: Loaded .gd file '%s' with action_adder %s" % [file, action_adders_list[-1].id])
+	for file in get_all_files("res://scripts/actions/", "gd"):
+		actions_list.append(load(file))
+		Log.l("ItemManager: Loaded .gd file '%s' with action %s" % [file, actions_list[-1].id])
+	for file in get_all_files("res://"):
+		register_item_from_file(file)
