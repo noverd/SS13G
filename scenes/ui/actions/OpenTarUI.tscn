@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1igxgdna0bxj"]
+[gd_scene load_steps=4 format=3 uid="uid://b1igxgdna0bxj"]
 
 [ext_resource type="Script" path="res://scripts/ui/actions/open_tar_ui.gd" id="1_fili6"]
 [ext_resource type="FontFile" uid="uid://cw1u7ckdg65qa" path="res://res/fnt/NotoSansDisplay/NotoSansDisplay-Bold.ttf" id="1_wknjv"]
+[ext_resource type="PackedScene" uid="uid://b0wnqmu8cll2g" path="res://scenes/ui/actions/ItemUI.tscn" id="3_id3mk"]
 
 [node name="OpenTarUI" type="Window"]
-title = "NORM"
+title = "KEY_GAMENAME"
 position = Vector2i(500, 500)
-size = Vector2i(200, 250)
+size = Vector2i(250, 300)
 theme_override_fonts/title_font = ExtResource("1_wknjv")
 theme_override_font_sizes/title_font_size = 32
 script = ExtResource("1_fili6")
@@ -17,5 +18,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 250.0
+theme_override_constants/separation = 55
+
+[node name="ItemUI" parent="Panel/VBoxContainer" instance=ExtResource("3_id3mk")]
+layout_mode = 2
+
+[node name="ItemUI2" parent="Panel/VBoxContainer" instance=ExtResource("3_id3mk")]
+layout_mode = 2
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
