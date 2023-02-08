@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1igxgdna0bxj"]
+
+[ext_resource type="Script" path="res://scripts/ui/actions/open_tar_ui.gd" id="1_fili6"]
+[ext_resource type="FontFile" uid="uid://cw1u7ckdg65qa" path="res://res/fnt/NotoSansDisplay/NotoSansDisplay-Bold.ttf" id="1_wknjv"]
+
+[node name="OpenTarUI" type="Window"]
+title = "NORM"
+position = Vector2i(500, 500)
+size = Vector2i(200, 250)
+theme_override_fonts/title_font = ExtResource("1_wknjv")
+theme_override_font_sizes/title_font_size = 32
+script = ExtResource("1_fili6")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]

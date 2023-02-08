@@ -36,7 +36,7 @@ func client():
 func server_disconnected(): # Prototype
 	pass
 
-@rpc(any_peer)
+@rpc("any_peer")
 func add_player(player_data):
 	var rpc_sender = multiplayer.get_remote_sender_id()
 	Log.l("add player: peer_id: %d" % rpc_sender)

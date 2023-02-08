@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhaljal7r7elm"]
+[gd_scene load_steps=4 format=3 uid="uid://bhaljal7r7elm"]
 
 [ext_resource type="Script" path="res://scripts/ui/MainMenu.gd" id="1_lonyt"]
-[ext_resource type="FontVariation" uid="uid://djeoody7vfhy5" path="res://res/fnt/MainMenuFont.tres" id="1_mqebg"]
+[ext_resource type="FontFile" uid="uid://cw1u7ckdg65qa" path="res://res/fnt/NotoSansDisplay/NotoSansDisplay-Bold.ttf" id="2_busho"]
+[ext_resource type="FontFile" uid="uid://0m3kf17nqepx" path="res://res/fnt/NotoSansDisplay/NotoSansDisplay-Regular.ttf" id="3_rfwna"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -30,41 +31,41 @@ theme_override_constants/separation = 50
 
 [node name="GameName" type="Label" parent="HBox/VBox"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_mqebg")
-theme_override_font_sizes/font_size = 128
+theme_override_fonts/font = ExtResource("2_busho")
+theme_override_font_sizes/font_size = 115
 text = "KEY_GAMENAME"
 horizontal_alignment = 1
 
 [node name="Play" type="Button" parent="HBox/VBox"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_mqebg")
-theme_override_font_sizes/font_size = 128
+theme_override_fonts/font = ExtResource("3_rfwna")
+theme_override_font_sizes/font_size = 82
 text = "KEY_PLAY"
 
 [node name="Multiplayer" type="Button" parent="HBox/VBox"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_mqebg")
-theme_override_font_sizes/font_size = 128
+theme_override_fonts/font = ExtResource("3_rfwna")
+theme_override_font_sizes/font_size = 82
 disabled = true
 text = "KEY_MULTIPLAYER"
 
 [node name="Settings" type="Button" parent="HBox/VBox"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_mqebg")
-theme_override_font_sizes/font_size = 128
+theme_override_fonts/font = ExtResource("3_rfwna")
+theme_override_font_sizes/font_size = 82
 text = "KEY_SETTINGS"
 
 [node name="Account" type="Button" parent="HBox/VBox"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_mqebg")
-theme_override_font_sizes/font_size = 128
+theme_override_fonts/font = ExtResource("3_rfwna")
+theme_override_font_sizes/font_size = 82
 disabled = true
 text = "KEY_ACCOUNT"
 
 [node name="Exit" type="Button" parent="HBox/VBox"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_mqebg")
-theme_override_font_sizes/font_size = 128
+theme_override_fonts/font = ExtResource("3_rfwna")
+theme_override_font_sizes/font_size = 82
 text = "KEY_QUIT"
 
 [connection signal="pressed" from="HBox/VBox/Play" to="." method="_on_play_pressed"]

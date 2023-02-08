@@ -30,7 +30,7 @@ func _enter_tree():
 	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
 	controlled = is_local_authority()
 	$CanvasLayer/PlayerUI.visible = controlled
-	$Camera2D.current = controlled
+	$Camera2D.enabled = controlled
 	if gender == FEMALE:
 		$Textures/BodyHead.texture = preload("res://res/human/head_f.png")
 		$Textures/Torso.texture = preload("res://res/human/torso_f.png")
@@ -67,4 +67,18 @@ func _physics_process(delta):
 	cloth("boots", boots)
 	cloth("head", head)
 	cloth("belt", belt)
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			print("Left button was clicked at ", event.position)
+			var end = get_viewport_rect().end
+			if end.x / 2 > event.position.x and end.y / 2 > event.position.y:
+				rotate = DOWN
+			if end.x / 2 < event.position.x and end.y / 2 > event.position.y:
+				rotate = RIGHT
+			if end.x / 2 > event.position.x and end.y / 2 < event.position.y:
+				rotate = UP
+			if end.x / 2 < event.position.x and end.y / 2 < event.position.y:
+				rotate = LEFT
 	

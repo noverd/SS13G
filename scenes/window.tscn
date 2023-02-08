@@ -19,8 +19,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 2
-text = "FUCK YOU"
-
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
