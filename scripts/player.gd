@@ -43,6 +43,11 @@ func _enter_tree():
 	cloth("head", head)
 	cloth("belt", belt)
 
+func _ready():
+	var item = ItemManager.get_item('ancient_backpack')
+	item.item_data["items"] = [item]
+	ItemManager.get_action("tar_open").action(item, self)
+
 func get_input():
 	var vector: Vector2 = Input.get_vector("left", "right", "up", "down") 
 	velocity = vector * speed

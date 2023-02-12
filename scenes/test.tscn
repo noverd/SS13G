@@ -52,7 +52,7 @@ layer_1/tile_data = PackedInt32Array(-524280, 0, 65536, -458744, 0, 65536, -3932
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(-3, -1)
-color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="players" type="Node2D" parent="."]
 
