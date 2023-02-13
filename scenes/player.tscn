@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c8jofvnoeae2h"]
+[gd_scene load_steps=20 format=3 uid="uid://c8jofvnoeae2h"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fjodr"]
 [ext_resource type="Texture2D" uid="uid://cadcnv2pgkkas" path="res://res/human/head_f.png" id="4_32ufn"]
@@ -21,29 +21,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bx0wh"]
 size = Vector2(34, 58)
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_nkciq"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/sync = true
-properties/1/path = NodePath(".:rotate")
-properties/1/spawn = true
-properties/1/sync = true
-properties/2/path = NodePath(".:uniform")
-properties/2/spawn = true
-properties/2/sync = true
-properties/3/path = NodePath(".:back")
-properties/3/spawn = true
-properties/3/sync = true
-properties/4/path = NodePath(".:boots")
-properties/4/spawn = true
-properties/4/sync = true
-properties/5/path = NodePath(".:head")
-properties/5/spawn = true
-properties/5/sync = true
-properties/6/path = NodePath(".:belt")
-properties/6/spawn = true
-properties/6/sync = true
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_fjodr")
@@ -164,6 +141,3 @@ scale = Vector2(2, 2)
 texture = ExtResource("18_gsgjy")
 hframes = 2
 vframes = 2
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_nkciq")

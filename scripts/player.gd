@@ -6,7 +6,6 @@ var controlled: bool # controlled by u
 enum {FEMALE, MALE}
 @export var gender: int = 0 # 0 - FEMALE, 1 - MALE
 enum {UP, DOWN, RIGHT, LEFT}
-
 @export var uniform = "ancient_uniform" # Cloth ID
 @export var back = "ancient_backpack"
 @export var boots = "work_boots"
@@ -14,7 +13,7 @@ enum {UP, DOWN, RIGHT, LEFT}
 @export var belt = "utility_belt"
 
 func is_local_authority():
-	return $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id()
+	return get_multiplayer_authority() == multiplayer.get_unique_id()
 	
 func cloth(clothing_type: String, item_id):
 	var item = ItemManager.get_item(item_id)
@@ -27,7 +26,7 @@ func cloth(clothing_type: String, item_id):
 	$Textures.get_node(clothing_type.capitalize()).texture = load(item.item_params["texture"].get("equipped"))
 	
 func _enter_tree():
-	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
+	set_multiplayer_authority(name.to_int())
 	controlled = is_local_authority()
 	$CanvasLayer/PlayerUI.visible = controlled
 	$Camera2D.enabled = controlled
@@ -48,9 +47,16 @@ func _ready():
 	item.item_data["items"] = [item]
 	ItemManager.get_action("tar_open").action(item, self)
 
+@rpc
+func sync_pos(pos):
+	global_position = pos
+
+@rpc
+func sync_rotate(rot):
+	rotate = rot
+
 func get_input():
 	var vector: Vector2 = Input.get_vector("left", "right", "up", "down") 
-	velocity = vector * speed
 	if vector != Vector2(0.0, 0.0):
 		if vector == Vector2(0.0, -1.0):
 			rotate = DOWN
@@ -60,11 +66,14 @@ func get_input():
 			rotate = LEFT
 		if vector == Vector2(1.0, 0.0):
 			rotate = RIGHT
-	
+	rpc("sync_rotate", rotate)
+	velocity = vector * speed
+
 func _physics_process(delta):
 	if controlled:
 		get_input()
 		move_and_slide()
+		rpc("sync_pos", global_position)
 	for tex in $Textures.get_children():
 		tex.frame = rotate
 	cloth("uniform", uniform)
@@ -74,9 +83,8 @@ func _physics_process(delta):
 	cloth("belt", belt)
 
 func _input(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and controlled:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			print("Left button was clicked at ", event.position)
 			var end = get_viewport_rect().end
 			if end.x / 2 > event.position.x and end.y / 2 > event.position.y:
 				rotate = DOWN
@@ -86,4 +94,5 @@ func _input(event):
 				rotate = UP
 			if end.x / 2 < event.position.x and end.y / 2 < event.position.y:
 				rotate = LEFT
-	
+		rpc("sync_rotate", rotate)
+		
