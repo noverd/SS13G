@@ -56,50 +56,14 @@ region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xyx4k"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1gxjl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yt5in")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lvgeg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vx04x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5hrfx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5wkiu")
-}],
+"frames": [SubResource("AtlasTexture_1gxjl"), SubResource("AtlasTexture_yt5in"), SubResource("AtlasTexture_lvgeg"), SubResource("AtlasTexture_vx04x"), SubResource("AtlasTexture_5hrfx"), SubResource("AtlasTexture_5wkiu")],
 "loop": false,
 "name": &"closing",
 "speed": 8.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fshfn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o1arm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f0xlf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bqew3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i685o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_db3aj")
-}],
+"frames": [SubResource("AtlasTexture_fshfn"), SubResource("AtlasTexture_o1arm"), SubResource("AtlasTexture_f0xlf"), SubResource("AtlasTexture_bqew3"), SubResource("AtlasTexture_i685o"), SubResource("AtlasTexture_db3aj")],
 "loop": false,
-"name": &"opening",
+"name": &"openning",
 "speed": 8.0
 }]
 
@@ -119,8 +83,8 @@ shape = SubResource("RectangleShape2D_37fj5")
 
 [node name="Texture" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_xyx4k")
-animation = &"opening"
+frames = SubResource("SpriteFrames_xyx4k")
+animation = &"openning"
 
 [node name="Shadow" type="LightOccluder2D" parent="Texture"]
 scale = Vector2(0.5, 0.5)
