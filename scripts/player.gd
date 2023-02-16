@@ -45,6 +45,7 @@ func _enter_tree():
 func _ready():
 	var item = ItemManager.get_item('ancient_backpack')
 	item.item_data["items"] = [item]
+	print(item.item_data)
 	ItemManager.get_action("tar_open").action(item, self)
 
 @rpc
