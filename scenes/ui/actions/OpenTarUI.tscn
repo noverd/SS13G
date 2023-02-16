@@ -6,7 +6,7 @@
 [node name="OpenTarUI" type="Window"]
 title = "KEY_GAMENAME"
 position = Vector2i(875, 425)
-size = Vector2i(225, 300)
+size = Vector2i(250, 300)
 theme_override_fonts/title_font = ExtResource("1_wknjv")
 theme_override_font_sizes/title_font_size = 32
 script = ExtResource("1_fili6")
@@ -19,12 +19,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 250.0
 theme_override_constants/separation = 55
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
